@@ -2,39 +2,35 @@
   "name": "@rika_/utils",
   "type": "module",
   "version": "1.0.9",
+  "private": false,
+  "description": "rika的函数工具库",
   "author": {
     "name": "Rika",
-    "email": "rika00126@icloud.com"
+    "email": "rika00126@icloud.com",
+    "url": "https://rika-me.netlify.app/#/"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/repository.git"
+    "url": "git+https://github.com/Rika-L/-rika-utils.git"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.esm.js",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.esm.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./dist/": {
-      "import": "./dist/",
-      "require": "./dist/",
-      "types": "./dist/"
-    }
-  },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE.md",
-    "CHANGELOG.md",
-    "src",
-    "package.json"
-  ],
   "keywords": [
     "utils"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs"
+    },
+    "./dist/": {
+      "types": "./dist/",
+      "import": "./dist/",
+      "require": "./dist/"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
@@ -43,9 +39,15 @@
       ]
     }
   },
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE.md",
+    "README.md",
+    "dist",
+    "package.json",
+    "src"
+  ],
   "typings": "./dist/index.d.ts",
-  "license": "MIT",
-  "private": false,
   "scripts": {
     "dev": "vite",
     "clear": "rimraf dist",

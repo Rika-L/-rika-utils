@@ -1,4 +1,4 @@
-import { resolve } from 'node:path'
+import path, { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
 const fileName = {
@@ -9,6 +9,12 @@ const fileName = {
 const formats = Object.keys(fileName) as Array<keyof typeof fileName>
 
 export default defineConfig({
+  resolve: {
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, 'src') },
+      { find: '@@', replacement: path.resolve(__dirname) },
+    ],
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
