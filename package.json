@@ -1,0 +1,67 @@
+{
+  "name": "@rika_/utils",
+  "type": "module",
+  "version": "1.0.9",
+  "author": {
+    "name": "Rika",
+    "email": "rika00126@icloud.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/repository.git"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.esm.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.esm.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/",
+      "types": "./dist/"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md",
+    "CHANGELOG.md",
+    "src",
+    "package.json"
+  ],
+  "keywords": [
+    "utils"
+  ],
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "typings": "./dist/index.d.ts",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "vite",
+    "clear": "rimraf dist",
+    "build": "pnpm run clear && pnpm run lint:fix && vite build && pnpm run postbuild",
+    "preview": "vite preview",
+    "postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.26.0",
+    "@types/node": "^22.4.0",
+    "dts-bundle-generator": "^9.5.1",
+    "eslint": "^9.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}
