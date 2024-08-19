@@ -14,7 +14,7 @@ hero:
       link: /get-start
     - theme: alt
       text: API
-      link: /markdown-examples
+      link: /API/all
 
 features:
   - icon: 🛠️
