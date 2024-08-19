@@ -24,7 +24,7 @@ bun install @rika_/utils
 
 ## 最简使用
 ```ts
-import {jsonToFormData} from "@rika_/utils";
+import { jsonToFormData } from '@rika_/utils'
 
-const formData = jsonToFormData({id: 1})
+const formData = jsonToFormData({ id: 1 })
 ```

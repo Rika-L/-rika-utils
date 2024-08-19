@@ -8,11 +8,11 @@
 ### 基础用法
 
 ```ts {7}
-import {jsonToFormData} from "@rika_/utils";
+import { jsonToFormData } from '@rika_/utils'
 
 const student = {
-    name: '张三',
-    // xxxxx
+  name: '张三',
+  // xxxxx
 }
 const formData = jsonToFormData(student)
 ```

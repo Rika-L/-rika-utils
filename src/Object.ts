@@ -6,22 +6,20 @@
  * @return {FormData} 一个FormData对象
  * @CreateData 2024-08-18 20:30:19
  */
-function jsonToFormData(json: {
-  [property: string]: any
-}, options: jsonToFormDataOptions = { allowEmpty: true }): FormData {
-  const formData = new FormData()
-  for (const item in json) {
-    if (options.allowEmpty) {
-      if (json[item] === null)
-        json[item] = '' // null转为空串
-      formData.append(item, json[item])
-    }
-    else {
-      if (json[item] === null || json[item] === '')
-        continue
-      formData.append(item, json[item])
-    }
+function jsonToFormData(json: { [key: string]: any }, options: jsonToFormDataOptions = { allowEmpty: true }) {
+  if (typeof json !== 'object') {
+    throw new TypeError('The first argument must be a non-null object.')
   }
+  const formData = new FormData()
+  Object.keys(json).forEach((key) => {
+    const value = json[key]
+    if (options.allowEmpty) {
+      formData.append(key, value === null ? '' : value)
+    }
+    else if (value !== null && value !== '') {
+      formData.append(key, value)
+    }
+  })
   return formData
 }
 

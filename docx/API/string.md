@@ -21,4 +21,3 @@ const extension = getFileExtension(fileName) // ".jpg"
 | 参数属性     | 说明        | 类型     |
 |----------|-----------|--------|
 | fileName | 字符串形式的文件名 | string |
-
