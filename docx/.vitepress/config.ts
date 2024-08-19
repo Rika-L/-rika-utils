@@ -26,7 +26,8 @@ export default defineConfig({
                 text: 'API',
                 items: [
                     {text: 'allAPI', link: '/API/all'},
-                    {text: 'string', link: '/API/string'}
+                    {text: 'string', link: '/API/string'},
+                    {text: 'object', link: '/API/object'},
                 ]
             },
         ],
